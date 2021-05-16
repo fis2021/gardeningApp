@@ -1,23 +1,19 @@
-// Tests for the behavior of the links collection
-//
-// https://guide.meteor.com/testing.html
-
 import { Meteor } from 'meteor/meteor';
 import { assert } from 'chai';
-import Links from './Links.js';
+import OrdersCollection from './OrdersCollection.js';
 
 if (Meteor.isServer) {
-  describe('links collection', function () {
+  describe('orders collection', function () {
     it('insert correctly', function () {
-      const linkId = Links.insert({
+      const orderId = OrdersCollection.insert({
         title: 'meteor homepage',
         url: 'https://www.meteor.com',
       });
-      const added = Links.find({ _id: linkId });
+      const added = OrdersCollection.find({ _id: orderId });
       const collectionName = added._getCollectionName();
       const count = added.count();
 
-      assert.equal(collectionName, 'links');
+      assert.equal(collectionName, 'orders');
       assert.equal(count, 1);
     });
   });
