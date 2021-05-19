@@ -9,6 +9,8 @@ $ cd gardeningApp
 
 $ meteor npm install
 
+$ meteor npm install --save @babel/runtime vue vue-meteor-tracker vue-router
+
 $ meteor
 ```
 ## In browser:
